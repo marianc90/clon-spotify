@@ -1,0 +1,326 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.header {
+    background-color: #000;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__marca {
+    width: 130px;
+    height: 32px;
+}
+
+.header__logo {
+    height: 100%;
+    width: 100%;
+}
+
+.nav {
+    /* background-color: red; */
+    padding: 1rem;
+}
+
+.nav__lista {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    /* gap: 16px; */ /* (px, rem), %, vh. vw */
+}
+
+.nav__item {
+    margin-left: 16px;
+}
+
+.nav__enlace {
+    color: #fff;
+    text-decoration: none;
+}
+
+.seccion1 {
+    background-color: #2941AA;
+    color: #1ED660;
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../imagenes/fondo-ilustracion-1.svg);
+    background-size: cover;
+    background-position: 200px center;
+    background-repeat: no-repeat;
+}
+
+.seccion1__titulo {
+    font-size: 70px;
+}
+
+.seccion1__subtitulo {
+    font-size: 40px;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.seccion1__parrafo {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__open{
+    display: none;
+    font-size: 32px;
+    color: white;
+    text-decoration: none;
+}
+.jam-whatsapp{
+    color: green;
+}
+
+.categories__grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    gap: 1rem;
+    
+}
+.categories__item{
+    background-color: #333333;
+    color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none
+}
+.categories__img{
+    position: absolute;
+    bottom: -1rem;
+    right: -1rem;
+    transform: rotate(30deg);
+    transition: transform 1s;
+
+
+}
+.categories{
+    padding: 2rem 0;
+    background-color: #121212;
+    
+}
+
+.categories__contenedor{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.categories__title{
+    font-size: 30px;
+    margin-bottom: 2rem;
+    color: white;
+}
+.categories__item--1{
+    background-color: rgb(47, 92, 47);
+}
+.categories__item--2{
+    background-color: rgb(60, 58, 141);
+}
+.categories__item--3{
+    background-color: rgb(99, 37, 78);
+}
+.categories__item:hover .categories__img{
+    transform: rotate(0deg);
+}
+/*
+Media queries---> se aplican al final de nuestros estilos
+
+@media screen and (max-width: 600px) {Estilos para movil.....}
+@media screen and (max-width: 1024px) {Estilos para tablet....}
+
+*/
+.nav__item--close{
+    display: none;
+}
+
+.gradientes {
+    width: 100%;
+    height: 500px;
+    /*background-image: linear-gradient(direccion, color1, color2);*/
+    background-image: linear-gradient(to left, red, yellow);
+    background-image: linear-gradient(to right, red, yellow);
+    background-image: linear-gradient(red, yellow); /*por defecto to bottom*/
+    background: #02AAB0;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #00CDAC, #02AAB0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #00CDAC, #02AAB0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
+
+}
+
+.transform-translate{
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    color: #121212;
+    transform: translate(300px, 200px);
+    transform: scale(120%);
+    transform: rotate(30deg);
+    transform: skew(20deg, 10deg);
+    transition: all 3s;
+    
+}
+
+
+.gradientes:hover .transform-translate{
+    transform: scale(5) rotate(70deg) translate(200px);
+}
+
+.animacion__caja{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    animation-name: coder;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;/* linear, ease, ease-in, ease-out, ease-in-out*/
+    animation-delay: 1s;
+
+}
+
+@keyframes coder {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+.desaparecer{
+    animation-name: desaparecer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes desaparecer{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    /* 
+    Código de CSS que ya conocen, es decir los selectores y propieades a modificar, agregar, eliminar
+    */
+    
+    .header{
+        background-color: red;
+        flex-direction: column;
+    }
+   
+}
+/* Es importante el orden de las media queries para que se pisen*/
+
+@media screen and (max-width: 600px) {
+    .seccion1{
+        display: flex; /* Aparece*/
+        height: 100vh; /*viewport-heigh toma como referencia la altura del navegador*/
+    }
+    .header{
+        background-color: rebeccapurple;
+        flex-direction: row;
+        
+    }
+    .nav{
+        display: none;
+    }
+    .header__open{
+        display: block;
+    }
+    .seccion1__titulo{
+        font-size: 40px;
+    }
+    .seccion1__subtitulo{
+        font-size: 25px;
+        color: white;
+    }
+    .seccion1__parrafo{
+        text-align: center;
+    }
+    .footer{
+        /*flex-direction: column-reverse;*/
+        flex-direction: column;
+
+        gap: 40px;
+
+    }
+    .footer__logo{
+        order: 1;
+    }
+    .footer__texto{
+        order: -1;
+    }
+    
+    #lateral{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 100;
+    transition: left 1s;
+    }
+
+#lateral:target{
+    left: 0;
+
+}
+
+.nav__lista{
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    gap: 1rem;
+}
+.nav__item--close{
+    display: block;
+}
+}
